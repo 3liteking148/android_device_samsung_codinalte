@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-  <project name="Meticulus/android_kernel_samsung_codina" path="kernel/samsung/codina" remote="cm" revision="kk44"/>
-  <project name="Meticulus/android_device_samsung_golden" path="device/samsung/golden" remote="cm" revision="carbon-l"/>
-  <project name="Meticulus/android_vendor_samsung_codinatmo" path="vendor/samsung/codinatmo" remote="cm" revision="kk44"/>
-  <project name="Meticulus/android_vendor_samsung_codinamtr" path="vendor/samsung/codinamtr" remote="cm" revision="kk44"/>
-  <project name="Meticulus/android_vendor_samsung_codinavid" path="vendor/samsung/codinavid" remote="cm" revision="kk44"/>
-</manifest>
-
