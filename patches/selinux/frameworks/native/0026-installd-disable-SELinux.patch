@@ -97,14 +97,6 @@ index 1a0185f..a0f2699 100644
          if (property_get_bool("dalvik.vm.usejitprofiles")) {
              const std::string profile_path = create_data_user_profile_package_path(userid, pkgname);
              // read-write-execute only for the app user.
-@@ -237,7 +242,6 @@ int migrate_app_data(const char *uuid, const char *pkgname, userid_t userid, int
- 
-     auto ce_path = create_data_user_ce_package_path(uuid, userid, pkgname);
-     auto de_path = create_data_user_de_package_path(uuid, userid, pkgname);
--
-     // If neither directory is marked as default, assume CE is default
-     if (getxattr(ce_path.c_str(), kXattrDefault, nullptr, 0) == -1
-             && getxattr(de_path.c_str(), kXattrDefault, nullptr, 0) == -1) {
 @@ -448,11 +452,12 @@ int move_complete_app(const char *from_uuid, const char *to_uuid, const char *pa
                      << ": status " << rc;
              goto fail;
