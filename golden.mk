@@ -28,67 +28,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 # Inherit the proprietary vendors blobs for all codinas.
 $(call inherit-product-if-exists, vendor/samsung/golden/golden-vendor.mk)
 
-# Janice stuff
-$(call inherit-product-if-exists, vendor/samsung/janice/janice-vendor.mk)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/updater-script-janice:updater-script-janice \
-    $(LOCAL_PATH)/prebuilt/janice.img:janice.img \
-    $(LOCAL_PATH)/prebuilt/modules/ac97_bus.ko:janice/lib/modules/ac97_bus.ko \
-    $(LOCAL_PATH)/prebuilt/modules/auth_rpcgss.ko:janice/lib/modules/auth_rpcgss.ko \
-    $(LOCAL_PATH)/prebuilt/modules/blowfish.ko:janice/lib/modules/blowfish.ko \
-    $(LOCAL_PATH)/prebuilt/modules/bthid.ko:janice/lib/modules/bthid.ko \
-    $(LOCAL_PATH)/prebuilt/modules/btrfs.ko:janice/lib/modules/btrfs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/cdc-acm.ko:janice/lib/modules/cdc-acm.ko \
-    $(LOCAL_PATH)/prebuilt/modules/cifs.ko:janice/lib/modules/cifs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/configs.ko:janice/lib/modules/configs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/crc7.ko:janice/lib/modules/crc7.ko \
-    $(LOCAL_PATH)/prebuilt/modules/crc-itu-t.ko:janice/lib/modules/crc-itu-t.ko \
-    $(LOCAL_PATH)/prebuilt/modules/db8500-modem-trace.ko:janice/lib/modules/db8500-modem-trace.ko \
-    $(LOCAL_PATH)/prebuilt/modules/dhd.ko:janice/lib/modules/dhd.ko \
-    $(LOCAL_PATH)/prebuilt/modules/ext3.ko:janice/lib/modules/ext3.ko \
-    $(LOCAL_PATH)/prebuilt/modules/frandom.ko:janice/lib/modules/frandom.ko \
-    $(LOCAL_PATH)/prebuilt/modules/hwreg.ko:janice/lib/modules/hwreg.ko \
-    $(LOCAL_PATH)/prebuilt/modules/isofs.ko:janice/lib/modules/isofs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/j4fs.ko:janice/lib/modules/j4fs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/jbd.ko:janice/lib/modules/jbd.ko \
-    $(LOCAL_PATH)/prebuilt/modules/lib80211.ko:janice/lib/modules/lib80211.ko \
-    $(LOCAL_PATH)/prebuilt/modules/lockd.ko:janice/lib/modules/lockd.ko \
-    $(LOCAL_PATH)/prebuilt/modules/logfs.ko:janice/lib/modules/logfs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/logger.ko:janice/lib/modules/logger.ko \
-    $(LOCAL_PATH)/prebuilt/modules/lz4hc_compress.ko:janice/lib/modules/lz4hc_compress.ko \
-    $(LOCAL_PATH)/prebuilt/modules/lz4hc.ko:janice/lib/modules/lz4hc.ko \
-    $(LOCAL_PATH)/prebuilt/modules/lz4.ko:janice/lib/modules/lz4.ko \
-    $(LOCAL_PATH)/prebuilt/modules/lzo.ko:janice/lib/modules/lzo.ko \
-    $(LOCAL_PATH)/prebuilt/modules/mac80211.ko:janice/lib/modules/mac80211.ko \
-    $(LOCAL_PATH)/prebuilt/modules/mii.ko:janice/lib/modules/mii.ko \
-    $(LOCAL_PATH)/prebuilt/modules/msdos.ko:janice/lib/modules/msdos.ko \
-    $(LOCAL_PATH)/prebuilt/modules/nfs_acl.ko:janice/lib/modules/nfs_acl.ko \
-    $(LOCAL_PATH)/prebuilt/modules/nfs.ko:janice/lib/modules/nfs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/nfs_layout_nfsv41_files.ko:janice/lib/modules/nfs_layout_nfsv41_files.ko \
-    $(LOCAL_PATH)/prebuilt/modules/nilfs2.ko:janice/lib/modules/nilfs2.ko \
-    $(LOCAL_PATH)/prebuilt/modules/nomadik-rng.ko:janice/lib/modules/nomadik-rng.ko \
-    $(LOCAL_PATH)/prebuilt/modules/ntfs.ko:janice/lib/modules/ntfs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/param.ko:janice/lib/modules/param.ko \
-    $(LOCAL_PATH)/prebuilt/modules/pn544.ko:janice/lib/modules/pn544.ko \
-    $(LOCAL_PATH)/prebuilt/modules/pn547.ko:janice/lib/modules/pn547.ko \
-    $(LOCAL_PATH)/prebuilt/modules/reiserfs.ko:janice/lib/modules/reiserfs.ko \
-    $(LOCAL_PATH)/prebuilt/modules/rng-core.ko:janice/lib/modules/rng-core.ko \
-    $(LOCAL_PATH)/prebuilt/modules/serpent.ko:janice/lib/modules/serpent.ko \
-    $(LOCAL_PATH)/prebuilt/modules/snd-aaci.ko:janice/lib/modules/snd-aaci.ko \
-    $(LOCAL_PATH)/prebuilt/modules/snd-ac97-codec.ko:janice/lib/modules/snd-ac97-codec.ko \
-    $(LOCAL_PATH)/prebuilt/modules/sunrpc.ko:janice/lib/modules/sunrpc.ko \
-    $(LOCAL_PATH)/prebuilt/modules/udf.ko:janice/lib/modules/udf.ko \
-    $(LOCAL_PATH)/prebuilt/modules/usbhid.ko:janice/lib/modules/usbhid.ko \
-    $(LOCAL_PATH)/prebuilt/modules/usbkbd.ko:janice/lib/modules/usbkbd.ko \
-    $(LOCAL_PATH)/prebuilt/modules/usbmon.ko:janice/lib/modules/usbmon.ko \
-    $(LOCAL_PATH)/prebuilt/modules/usbmouse.ko:janice/lib/modules/usbmouse.ko \
-    $(LOCAL_PATH)/prebuilt/modules/usb-storage.ko:janice/lib/modules/usb-storage.ko \
-    $(LOCAL_PATH)/prebuilt/modules/ux500_cryp.ko:janice/lib/modules/ux500_cryp.ko \
-    $(LOCAL_PATH)/prebuilt/modules/ux500_hash.ko:janice/lib/modules/ux500_hash.ko \
-    $(LOCAL_PATH)/prebuilt/modules/vpnclient.ko:janice/lib/modules/vpnclient.ko \
-    $(LOCAL_PATH)/prebuilt/modules/xz_dec.ko:janice/lib/modules/xz_dec.ko \
-    $(LOCAL_PATH)/prebuilt/modules/zlib.ko:janice/lib/modules/zlib.ko
-
 #Releasetools
 #PRODUCT_COPY_FILES += \
 #	$(LOCAL_PATH)/blobinstaller.sh:blobinstaller.sh \

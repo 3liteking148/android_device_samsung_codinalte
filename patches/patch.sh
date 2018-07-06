@@ -27,5 +27,4 @@ do
   esac
 done
 . patcher.sh selinux
-. patcher.sh janice
 

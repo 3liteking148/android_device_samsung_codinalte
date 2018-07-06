@@ -38,11 +38,6 @@ def addFolderToZip(info, directory, basedir):
             addFolderToZip(info,each,os.path.join(basedir, entity))
 
 def FullOTA_InstallEnd(info):
-
-  addFolderToZip(info, os.path.join(TARGET_DIR, "janice"),"janice")
-  
-  info.output_zip.write(os.path.join(TARGET_DIR, "updater-script-janice"), "META-INF/com/google/android/updater-script-janice")
-  info.output_zip.write(os.path.join(TARGET_DIR, "janice.img"), "janice.img")
   
   # Symlink some dependencies of libcscall.so
  
