@@ -26,5 +26,4 @@ do
    * )      break;;
   esac
 done
-. patcher.sh selinux
 
