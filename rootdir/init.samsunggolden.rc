@@ -503,7 +503,7 @@ service admsrv /system/bin/admsrv
     group system audio inet net_bt net_bt_admin net_raw shell log
     ioprio rt 4
     capability NET_ADMIN NET_RAW SYS_NICE
-    seclabel u:r:admsrv:s0
+    #seclabel u:r:admsrv:s0
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 
