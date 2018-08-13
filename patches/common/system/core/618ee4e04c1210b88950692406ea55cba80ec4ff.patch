@@ -1,0 +1,43 @@
+From 618ee4e04c1210b88950692406ea55cba80ec4ff Mon Sep 17 00:00:00 2001
+From: Shilin Victor <chrono.monochrome@gmail.com>
+Date: Mon, 22 Jan 2018 11:40:30 +0300
+Subject: [PATCH] String8: check string source against NULL
+
+On STE u8500 hardware, audiopolicy blobs are passing
+NULL pointer to String8 class constructor on track start / resume.
+Add a condition check to avoid segfault.
+
+Change-Id: Icd424727363a4757448fb045119434aa9b6e15a5
+---
+ libutils/String8.cpp | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/libutils/String8.cpp b/libutils/String8.cpp
+index ad0e72ec1..8028718bb 100644
+--- a/libutils/String8.cpp
++++ b/libutils/String8.cpp
+@@ -23,6 +23,7 @@
+ #include <utils/Log.h>
+ #include <utils/String16.h>
+ 
++#include <cutils/compiler.h>
+ #include <ctype.h>
+ 
+ #include "SharedBuffer.h"
+@@ -169,9 +170,14 @@ String8::String8(const String8& o)
+ }
+ 
+ String8::String8(const char* o)
+-    : mString(allocFromUTF8(o, strlen(o)))
++    : mString(0)
+ {
+-    if (mString == NULL) {
++    if (CC_LIKELY(o != NULL)) {
++        mString = allocFromUTF8(o, strlen(o));
++        if (mString == NULL) {
++            mString = getEmptyString();
++        }
++    } else {
+         mString = getEmptyString();
+     }
+ }
