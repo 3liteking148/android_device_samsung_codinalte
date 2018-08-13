@@ -1,0 +1,13 @@
+diff --git a/build/tasks/kernel.mk b/build/tasks/kernel.mk
+index 2967f07..36a94f0 100644
+--- a/build/tasks/kernel.mk
++++ b/build/tasks/kernel.mk
+@@ -296,7 +296,7 @@ INSTALLED_KERNEL_MODULES:
+ 			$(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) INSTALL_MOD_PATH=../../$(KERNEL_MODULES_INSTALL) modules_install && \
+ 			mofile=$$(find $(KERNEL_MODULES_OUT) -type f -name modules.order) && \
+ 			mpath=$$(dirname $$mofile) && \
+-			for f in $$(find $$mpath/kernel -type f -name '*.ko'); do \
++			for f in $$(find $$mpath -type f -name '*.ko'); do \
+ 				$(KERNEL_TOOLCHAIN_PATH)strip --strip-unneeded $$f; \
+ 				mv $$f $(KERNEL_MODULES_OUT); \
+ 			done && \
