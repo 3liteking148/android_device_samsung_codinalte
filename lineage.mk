@@ -31,6 +31,10 @@ PRODUCT_MANUFACTURER := samsung
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
-# Set build fingerprint and ID
-#BUILD_ID := TRIANA00$(shell date -u +%Y%m%d)
-#PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=cm_golden BUILD_FINGERPRINT=cyanogenmod/cm_golden/golden:4.4.2/$(BUILD_ID) PRIVATE_BUILD_DESC="SGH-T599X 4.4.2"
+
+# Set build fingerprint / ID / Product Name etc.
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	PRODUCT_NAME=goldenxx \
+	TARGET_DEVICE=golden \
+	BUILD_FINGERPRINT="samsung/goldenxx/golden:4.1.2/JZO54K/I8190XXAMJ3:user/release-keys" \
+	PRIVATE_BUILD_DESC="goldenxx-user 4.1.2 JZO54K I8190XXAMJ3 release-keys"
